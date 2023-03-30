@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function Header () {
   return (
     <header>
@@ -14,6 +14,9 @@ function Header () {
       </select>
       <div>
         <button>Зарегистрироваться</button>
+        <button>
+          <Link to="/profile">Перейти в профиль</Link>
+        </button>
       </div>
     </header>
   )
