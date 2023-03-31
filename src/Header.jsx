@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 function Header () {
+  const query = new URL(`${window.location.origin}/profile`);
+  query.searchParams.set("mode", "main");
   return (
     <header>
       <div>
@@ -15,7 +17,7 @@ function Header () {
       <div>
         <button>Зарегистрироваться</button>
         <button>
-          <Link to="/profile">Перейти в профиль</Link>
+          <Link to={`${query.toString()}`}>Перейти в профиль</Link>
         </button>
       </div>
     </header>
