@@ -13,12 +13,12 @@ function Profile({ user }) {
           {user.profession}
         </span>
       </div>
-      <ul>
+      {/* <ul>
         <li>
           <button>Уведомления</button>
           <button>Сообщения</button>
         </li>
-      </ul>
+      </ul> */}
     </div>
   )
 }

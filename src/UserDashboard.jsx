@@ -4,7 +4,7 @@ import Profile from "./Profile";
 import Calendar from "./Calendar";
 import MainDashboard from "./MainDashboard";
 import { user } from './utils';
-import { useLocation, useSearchParams, Link } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 function UserDashboard () {
   //variables
   let [searchParams, setSearchParams] = useSearchParams();
@@ -13,17 +13,13 @@ function UserDashboard () {
   // console.log(queryData);
   //states
   const [lessonsAmount, setLessonsAmount] = React.useState(0);
-  const [profileMode, setProfileMode] = React.useState(urlProfileMode);
+  // const [profileMode, setProfileMode] = React.useState(urlProfileMode);
 
-  // const [loggedInProfile]
-  React.useEffect(() => {
-    console.log(profileMode);
-  }, [profileMode])
   return (
     <section style={{display: "flex", justifyContent:"space-between", alignItems: "flex-start", height: "100vh", width: "100%", padding: "50px 45px 50px 0", boxSizing: "border-box"}}>
-      <SideMenu profileMode={profileMode} setProfileMode={setProfileMode}/>
+      <SideMenu />
       <div>
-        {profileMode === 'main' &&<>
+        {urlProfileMode === 'main' && <>
           <MainDashboard user={user} lessonsAmount={lessonsAmount}>
 
           </MainDashboard>
@@ -31,11 +27,11 @@ function UserDashboard () {
 
           </Profile>
         </>}
-        {profileMode === 'mylessons' && <>
+        {urlProfileMode === 'mylessons' && <>
           Мои уроки
         </>}
         {
-          profileMode === 'preferences' && <>
+          urlProfileMode === 'preferences' && <>
           Мои настройки</>
         }
       </div>
