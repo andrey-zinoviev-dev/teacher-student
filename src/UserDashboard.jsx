@@ -18,7 +18,7 @@ function UserDashboard () {
   return (
     <section style={{display: "flex", justifyContent:"space-between", alignItems: "flex-start", height: "100vh", width: "100%", padding: "50px 45px 50px 0", boxSizing: "border-box"}}>
       <SideMenu />
-      <div>
+      <div style={{width: "calc(100% - 240px)"}}>
         {urlProfileMode === 'main' && <>
           <MainDashboard user={user} lessonsAmount={lessonsAmount}>
 
